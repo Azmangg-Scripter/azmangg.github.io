@@ -1,0 +1,155 @@
+/* Genel stil ayarları */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #ffffff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Filigran stil ayarları */
+body::before {
+    content: 'Azmangg';
+    position: fixed;
+    top: 50%;
+    left: 0;
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-50%);
+    z-index: 0;
+    animation: watermarkMove 20s linear infinite;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+body::after {
+    content: 'Azmangg Azmangg Azmangg Azmangg Azmangg Azmangg Azmangg';
+    position: fixed;
+    top: 60%;
+    left: 0;
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-50%);
+    z-index: 0;
+    animation: watermarkMove 30s linear infinite;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Filigran hareket animasyonu */
+@keyframes watermarkMove {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Başlık stil ayarları */
+header {
+    background-color: #1f1f1f;
+    color: #00bfff;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease both;
+}
+
+/* Başlık animasyonu */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ana bölüm stil ayarları */
+main {
+    padding: 2rem;
+    z-index: 1;
+    position: relative;
+}
+
+/* Video galerisi stil ayarları */
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Video öğesi stil ayarları */
+.video-item {
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(45% - 1rem);
+    position: relative;
+    animation: fadeInUp 1s ease both;
+    padding-bottom: 1rem; /* Alt kısımdaki açıklamalar için boşluk ekleyin */
+}
+
+.video-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Video başlık stil ayarları */
+.video-item h2 {
+    background-color: #00bfff;
+    color: #1e1e1e;
+    margin: 0;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+/* Video stil ayarları */
+video {
+    display: block;
+    width: 100%;
+}
+
+/* Video açıklama stil ayarları */
+.video-item p {
+    margin: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+/* Video animasyonu */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer stil ayarları */
+footer {
+    background-color: #1f1f1f;
+    color: #00bfff;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+    animation: fadeInUp 1s ease both;
+}
